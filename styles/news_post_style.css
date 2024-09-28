@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{margin: 0;}
+
+.background {
+    background-color: #28003A;
+    height: 80vh;
+    padding: 10vh;
+}
+
+.home_area {
+    background-color: rgb(250, 222, 253);
+    width: 35vw;
+    margin: auto;
+    height: 80vh;
+    border-radius: 5px;
+}
+
+/*Post*/
+.container {
+    overflow: auto;
+    height: 80vh;
+}
+
+#scrollbar::-webkit-scrollbar-track
+{
+	background-color: rgb(250, 222, 253);
+	border-radius: 10px;
+}
+
+#scrollbar::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+#scrollbar::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(220, 174, 253)),
+									   color-stop(0.72, rgb(220, 174, 253)),
+									   color-stop(0.86, rgb(220, 174, 253)));
+}
+.container .post {
+    width: 80%;
+    margin: auto;
+}
+
+
+.container .post h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: #6F386F;
+    padding: 2vh;
+}
+
+.container .post .image {
+    text-align: center;
+}
+.container .post img {
+    width: 80%;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.container .post .date {
+    color: #ae7aae;
+    font-size: 12px;
+    margin: 1vh 0;
+}
+
+.container .post .summary_content_box {
+    text-align: justify;
+
+}
+.container .post .summary_content {
+    color: #6a346a;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
