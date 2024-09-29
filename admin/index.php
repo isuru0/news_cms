@@ -24,7 +24,7 @@
                 <td class="table-data-text"><?php echo $data["title"]?></td>
                 <td class="table-data-image"><img src="<?php echo $data["image_path"]; ?>" style="width:100px" ></td>
                 <td class="table-data-button">
-                    <p class="table-data-btn-view"><a href="control/view.php?id=<?php echo $data["id"]?>">View</a></p>
+                    <p class="table-data-btn-view"><a href="view.php?id=<?php echo $data["id"]?>">View</a></p>
                     <p class="table-data-btn-edit"><a href="edit.php?id=<?php echo $data["id"]?>">Edit</a></p>
                     <p class="table-data-btn-delete"><a href="control/delete.php?id=<?php echo $data["id"]?>">Delete</a></p>
                 </td>
