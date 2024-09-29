@@ -20,13 +20,13 @@
                 while ($data = mysqli_fetch_array($result)) {
             ?>
             <tr>
-                <td><?php echo $data["date"]?></td>
-                <td><?php echo $data["title"]?></td>
-                <td><img src="<?php echo $data["image_path"]; ?>" style="width:100px" ></td>
-                <td>
-                    <p><a href="control/view.php?id=<?php echo $data["id"]?>">View</a></p>
-                    <p><a href="edit.php?id=<?php echo $data["id"]?>">Edit</a></p>
-                    <p><a href="control/delete.php?id=<?php echo $data["id"]?>">Delete</a></p>
+                <td class="table-data-date"><?php echo $data["date"]?></td>
+                <td class="table-data-text"><?php echo $data["title"]?></td>
+                <td class="table-data-image"><img src="<?php echo $data["image_path"]; ?>" style="width:100px" ></td>
+                <td class="table-data-button">
+                    <p class="table-data-btn-view"><a href="control/view.php?id=<?php echo $data["id"]?>">View</a></p>
+                    <p class="table-data-btn-edit"><a href="edit.php?id=<?php echo $data["id"]?>">Edit</a></p>
+                    <p class="table-data-btn-delete"><a href="control/delete.php?id=<?php echo $data["id"]?>">Delete</a></p>
                 </td>
             </tr>
             <?php

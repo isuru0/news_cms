@@ -1,0 +1,56 @@
+.posts-list {
+    padding: 2%;
+    width: 100%;
+}
+
+table thead tr th {
+    font-size: 20px;
+    padding: 1%;
+    background-color: #28003A;
+    color: rgb(250, 222, 253);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table tbody tr {
+    margin-top: 5vh;
+    background-color: rgb(240, 215, 247);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+table tbody tr .table-data-date {
+    color:rgb(18, 18, 18);
+    font-size: 17px;
+    text-align: center;
+}
+table tbody tr .table-data-text {
+    color:rgb(18, 18, 18);
+    font-size: 17px;
+    padding: 1% 2%;
+}
+table tbody tr .table-data-image {
+    text-align: center;
+    padding-top: 1%;
+}
+table tbody tr .table-data-button {
+    text-align: center;
+}
+table tbody tr .table-data-button p {
+    
+    margin: 1% auto;
+    padding: 5px;
+    width: 97%;
+    border-radius: 5px;
+}
+table tbody tr .table-data-button p:hover {
+    cursor: pointer;
+}
+table tbody tr .table-data-button .table-data-btn-view {background-color: #04ab2e;}
+table tbody tr .table-data-button .table-data-btn-view:hover {background-color: #0acb3a;}
+table tbody tr .table-data-button .table-data-btn-edit {background-color: #df8d00;}
+table tbody tr .table-data-button .table-data-btn-edit:hover {background-color: #ffaa17;}
+table tbody tr .table-data-button .table-data-btn-delete {background-color: #de0046;}
+table tbody tr .table-data-button .table-data-btn-delete:hover {background-color: #ff1861;}
+table tbody tr .table-data-button p a {
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    font-size: 17px;
+}
