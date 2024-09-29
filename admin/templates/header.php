@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/templates_header.style.css">
     <link rel="stylesheet" href="../styles/admin_index_style.css">
     <link rel="stylesheet" href="../styles/admin_view_style.css">
+    <link rel="stylesheet" href="../styles/admin_create_post_style.css">
 </head>
 <body>
     

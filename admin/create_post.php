@@ -2,7 +2,7 @@
     include("templates/header.php");
 ?>
 
-    <div class="post-form">
+    <div class="admin_create_post_post-form">
         <form action="functions.php" method="post" enctype="multipart/form-data">
             <div>
                 <input type="text" name="title" id="" placeholder="Enter title" required>
