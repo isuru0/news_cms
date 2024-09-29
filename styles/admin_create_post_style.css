@@ -1,0 +1,51 @@
+.admin_create_post_post_form {
+    margin: 3% auto;
+    width: 50%;
+    background-color: rgb(240, 215, 247);
+    border-radius: 5px;
+
+}
+
+.admin_create_post_post_form_title {
+    width: 98vh;
+    margin: 2%;
+    padding: 1%;
+    font-size: 20px;
+    border: 2px solid #ac68dc;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.admin_create_post_post_form_content {
+    width: 98vh;
+    height: 50vh;
+    margin: 2%;
+    padding: 1%;
+    font-size: 20px;
+    border: 2px solid #ac68dc;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.admin_create_post_post_form_image {
+    display: flex;
+}
+.admin_create_post_post_form_image p {
+    font-size: 18px;
+    margin: 2vh 0 0 1vw;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.admin_create_post_post_form_image_img {
+    margin: 2vh 1vw;
+}
+
+.admin_create_post_post_form_btn_input {
+    text-decoration: none;
+    background-color: #a12bf6;
+    color: #fff;
+    padding: 5px;
+    margin: 2vh 1vw;
+    width: 20%;
+    border-radius: 5px;
+    font-size: 16px;
+}
