@@ -1,0 +1,39 @@
+* {margin: 0;}
+
+.dashboard {
+    background-color: rgb(250, 222, 253);
+    display: flex;
+}
+
+.dashboard .sidebar {
+    background-color: #28003A;
+    width: 25vw;
+    height: 100vh;
+
+}
+.dashboard .sidebar h1 {
+    text-align: center;
+    margin: 10vh;
+    font-size: 50px;
+}
+
+.dashboard .sidebar a {
+    text-decoration: none;
+    color: rgb(250, 222, 253);
+}
+
+/*.dashboard .sidebar .menu-list {}*/
+
+.dashboard .sidebar .menu-list .menu-item {
+
+    text-align: justify;
+    padding: 10px 8%;
+}
+.dashboard .sidebar .menu-list .menu-item:hover {
+    cursor: pointer;
+    background-color: #390053;
+}
+.dashboard .sidebar .menu-list .menu-item a{
+    font-size: 22px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
