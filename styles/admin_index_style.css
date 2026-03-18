@@ -1,55 +1,144 @@
 .posts-list {
-    padding: 2%;
     width: 100%;
+    padding: 24px 22px;
 }
 
-table thead tr th {
-    font-size: 20px;
-    padding: 1%;
-    background-color: #28003A;
-    color: rgb(250, 222, 253);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.posts-list table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: linear-gradient(180deg, #f8ecfc 0%, #f3e2fb 100%);
+    border: 1px solid #d9b6eb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 28px rgba(45, 7, 61, 0.13);
 }
 
-table tbody tr {
-    margin-top: 5vh;
-    background-color: rgb(240, 215, 247);
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.posts-list table thead th {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding: 15px 14px;
+    background: linear-gradient(135deg, #34004c, #230033);
+    color: #f6ddff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-table tbody tr .table-data-date {
-    color:rgb(18, 18, 18);
-    font-size: 17px;
+
+.posts-list table tbody tr {
+    background-color: rgba(255, 255, 255, 0.42);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.posts-list table tbody tr:nth-child(even) {
+    background-color: rgba(248, 231, 255, 0.78);
+}
+
+.posts-list table tbody tr:hover {
+    background-color: rgba(243, 214, 255, 0.82);
+}
+
+.posts-list table tbody td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(169, 104, 220, 0.24);
+    vertical-align: middle;
+}
+
+.posts-list table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.posts-list .table-data-date {
+    color: #532866;
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.posts-list .table-data-text {
+    color: #2d1638;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.35;
+    word-break: break-word;
+}
+
+.posts-list .table-data-image {
     text-align: center;
 }
-table tbody tr .table-data-text {
-    color:rgb(18, 18, 18);
-    font-size: 17px;
-    padding: 1% 2%;
+
+.posts-list .table-data-image img {
+    width: 120px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #cb9be6;
+    box-shadow: 0 7px 14px rgba(54, 11, 73, 0.15);
 }
-table tbody tr .table-data-image {
+
+.posts-list .table-data-button {
+    min-width: 140px;
+}
+
+.posts-list .table-data-button p {
+    margin: 0 0 8px;
+    border-radius: 8px;
     text-align: center;
-    padding-top: 1%;
+    transition: transform 0.16s ease, filter 0.16s ease;
 }
-table tbody tr .table-data-button {
-    text-align: center;
+
+.posts-list .table-data-button p:last-child {
+    margin-bottom: 0;
 }
-table tbody tr .table-data-button p {
-    margin: 1% auto;
-    padding: 5px;
-    width: 97%;
-    border-radius: 5px;
+
+.posts-list .table-data-button p:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
 }
-table tbody tr .table-data-button p:hover {
-    cursor: pointer;
+
+.posts-list .table-data-button .table-data-btn-view {
+    background: linear-gradient(135deg, #0eaf38, #0a8f2e);
 }
-table tbody tr .table-data-button .table-data-btn-view {background-color: #04ab2e;}
-table tbody tr .table-data-button .table-data-btn-view:hover {background-color: #0acb3a;}
-table tbody tr .table-data-button .table-data-btn-edit {background-color: #df8d00;}
-table tbody tr .table-data-button .table-data-btn-edit:hover {background-color: #ffaa17;}
-table tbody tr .table-data-button .table-data-btn-delete {background-color: #de0046;}
-table tbody tr .table-data-button .table-data-btn-delete:hover {background-color: #ff1861;}
-table tbody tr .table-data-button p a {
+
+.posts-list .table-data-button .table-data-btn-edit {
+    background: linear-gradient(135deg, #f49f14, #d67e00);
+}
+
+.posts-list .table-data-button .table-data-btn-delete {
+    background: linear-gradient(135deg, #f01960, #c90445);
+}
+
+.posts-list .table-data-button p a {
+    display: block;
     text-decoration: none;
-    color:rgb(255, 255, 255);
-    font-size: 17px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 10px;
+}
+
+@media (max-width: 1100px) {
+    .posts-list {
+        padding: 16px 12px;
+    }
+
+    .posts-list table thead th {
+        font-size: 16px;
+        padding: 12px 10px;
+    }
+
+    .posts-list table tbody td {
+        padding: 10px;
+    }
+
+    .posts-list .table-data-text {
+        font-size: 16px;
+    }
+
+    .posts-list .table-data-image img {
+        width: 96px;
+        height: 64px;
+    }
 }

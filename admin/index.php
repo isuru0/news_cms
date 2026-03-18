@@ -26,7 +26,7 @@
             <tr>
                 <td class="table-data-date"><?php echo $data["date"]?></td>
                 <td class="table-data-text"><?php echo $data["title"]?></td>
-                <td class="table-data-image"><img src="<?php echo $adminImagePath; ?>" style="width:100px" ></td>
+                <td class="table-data-image"><img src="<?php echo $adminImagePath; ?>" ></td>
                 <td class="table-data-button">
                     <p class="table-data-btn-view"><a href="./view.php?id=<?php echo (int) $data["id"]?>">View</a></p>
                     <p class="table-data-btn-edit"><a href="./edit.php?id=<?php echo (int) $data["id"]?>">Edit</a></p>
