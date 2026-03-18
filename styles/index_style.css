@@ -284,6 +284,7 @@ h1 {
 }
 
 .summary-post:nth-child(even) {
+    flex-direction: row-reverse;
     background: linear-gradient(155deg, #faf5ff, #ede9fe 70%);
 }
 
