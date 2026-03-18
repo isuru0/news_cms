@@ -3,20 +3,27 @@
 ?>
 
 <?php 
-    $id = $_GET['id'];
-    if($id) {
+    $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+    if($id > 0) {
         include("../connect.php");
         $sqlEdit = "SELECT *  FROM posts WHERE id = $id";
         $result = mysqli_query($conn, $sqlEdit);
+        $data = mysqli_fetch_assoc($result);
+        if ($data) {
+            $adminImagePath = ltrim($data["image_path"], "/");
+            if (strpos($adminImagePath, "admin/") === 0) {
+                $adminImagePath = substr($adminImagePath, 6);
+            }
+        }
     }else {
-        echo "No Post Found";
+        $data = null;
     }
 ?>
 
     <div class="post-form">
             <form action="functions.php" method="post" enctype="multipart/form-data">
                 <?php
-                    while($data = mysqli_fetch_array($result)) {
+                    if($data) {
                 ?>
 
                 <div>
@@ -26,7 +33,7 @@
                     <input type="text" name="content" id="" placeholder="Enter content: " value="<?php echo $data['content']; ?>">
                 </div>
                 <div>
-                    <img src="<?php echo $data["image_path"]; ?>" style="width:100px" >
+                    <img src="<?php echo $adminImagePath; ?>" style="width:100px" >
                     <input type="file" name="image" id="" accept="image/*">
                 </div>
                 <div>
@@ -39,6 +46,8 @@
                 </div>
 
                 <?php
+                    } else {
+                        echo "No Post Found";
                     }
                 ?>
             </form>

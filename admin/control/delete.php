@@ -1,14 +1,16 @@
 <?php
-$id =$_GET["id"];
-if($id) {
+$id = isset($_GET["id"]) ? (int) $_GET["id"] : 0;
+
+if($id > 0) {
     include("../../connect.php");
     $sqlDelete = "DELETE FROM posts WHERE id = $id";
     if(mysqli_query($conn, $sqlDelete)) {
-        header("Location:../index.php");
-    }else {
-        die("Something went wrong. Data is not deleted!");
+        header("Location: ../index.php", true, 302);
+        exit;
     }
-}else {
-    echo "Post Not Found";
+
+    die("Something went wrong. Data is not deleted!");
 }
+
+echo "Post Not Found";
 ?>

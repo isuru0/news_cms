@@ -26,25 +26,27 @@
                         $result = mysqli_query($conn, $sqlSelect);
                         while ($data = mysqli_fetch_array($result)) {
 
-                            //LIMIT THE CONTENT TO 100 CHARACTER FOR THE SUMMARY
-                            $summaryContent = substr($data["content"], 0, 202) . '...';
+                            // Strip HTML from content before trimming to avoid broken card markup.
+                            $plainContent = trim(strip_tags($data["content"]));
+                            $summaryContent = (strlen($plainContent) > 220) ? substr($plainContent, 0, 220) . '...' : $plainContent;
+                            $rawImagePath = ltrim($data["image_path"], "/");
+                            $imageSrc = (strpos($rawImagePath, "admin/") === 0) ? $rawImagePath : "admin/" . $rawImagePath;
                     ?>
                         <div class="summary-post">
                             <div class="left">
                                 <div>
-                                    <img src="admin/<?php echo $data["image_path"]; ?>" style="width:100px" >
+                                    <img src="<?php echo $imageSrc; ?>" >
                                 </div>
                             </div>
-
                             <div class="right">
                                 <div>
-                                    <h2><?php echo $data["title"]; ?></h2>
+                                    <h2><?php echo htmlspecialchars($data["title"], ENT_QUOTES, 'UTF-8'); ?></h2>
                                 </div>
                                 <div>
-                                    <p class="date"><?php echo $data["date"]; ?></p>
+                                    <p class="date"><?php echo htmlspecialchars($data["date"], ENT_QUOTES, 'UTF-8'); ?></p>
                                 </div>
                                 <div class="summary-content-box">
-                                    <p" class="summary_content"><?php echo $summaryContent ?></p>
+                                    <p class="summary_content"><?php echo htmlspecialchars($summaryContent, ENT_QUOTES, 'UTF-8'); ?></p>
                                 </div>
                                 <div>
                                     <p class="readMore"><a href="news_post.php?id=<?php echo $data['id']; ?>">READ MORE</a></p>

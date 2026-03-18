@@ -20,11 +20,13 @@
                         $sqlSelect = "SELECT * FROM posts WHERE id = $id";
                         $result = mysqli_query($conn, $sqlSelect);
                         while ($data = mysqli_fetch_array($result)) {
+                            $rawImagePath = ltrim($data["image_path"], "/");
+                            $imageSrc = (strpos($rawImagePath, "admin/") === 0) ? $rawImagePath : "admin/" . $rawImagePath;
                 ?>
                             <div class="post">
                                 <h1><?php echo $data['title']; ?></h1>
                                 <div class="image">
-                                    <img src="admin/<?php echo $data["image_path"]; ?>" >
+                                    <img src="<?php echo $imageSrc; ?>" >
                                 </div>
                                 <p class="date"><?php echo $data['date']; ?></p>
                                 <div class="summary_content_box">
