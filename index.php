@@ -13,8 +13,8 @@
 
             <h1>HEADLINE HUB</h1>
 
-            <form class="search">
-                <input class="searchTerm" type="search" placeholder="Type anything..."/>
+            <form class="search" method="get" action="index.php">
+                <input class="searchTerm" type="search" name="q" placeholder="Type anything..." value="<?php echo htmlspecialchars(isset($_GET['q']) ? trim($_GET['q']) : '', ENT_QUOTES, 'UTF-8'); ?>"/>
                 <button type="submit" class="searchButton">Search</button>    
             </form>
 
@@ -22,8 +22,21 @@
                 <div class="container" id="scrollbar">
                     <?php
                         include("connect.php");
-                        $sqlSelect = "SELECT * FROM posts";
-                        $result = mysqli_query($conn, $sqlSelect);
+                        $keyword = isset($_GET['q']) ? trim($_GET['q']) : '';
+
+                        if ($keyword !== '') {
+                            $sqlSelect = "SELECT * FROM posts WHERE title LIKE ? OR content LIKE ? ORDER BY id DESC";
+                            $stmt = mysqli_prepare($conn, $sqlSelect);
+                            $searchParam = "%" . $keyword . "%";
+                            mysqli_stmt_bind_param($stmt, "ss", $searchParam, $searchParam);
+                            mysqli_stmt_execute($stmt);
+                            $result = mysqli_stmt_get_result($stmt);
+                        } else {
+                            $sqlSelect = "SELECT * FROM posts ORDER BY id DESC";
+                            $result = mysqli_query($conn, $sqlSelect);
+                        }
+
+                        if ($result && mysqli_num_rows($result) > 0) {
                         while ($data = mysqli_fetch_array($result)) {
 
                             // Strip HTML from content before trimming to avoid broken card markup.
@@ -55,6 +68,20 @@
                         </div>
 
                         <?php    
+                        }
+                        } else {
+                    ?>
+                        <div class="summary-post">
+                            <div class="right" style="width:100%;">
+                                <h2>No matching posts found</h2>
+                                <p class="summary_content">Try a different keyword.</p>
+                            </div>
+                        </div>
+                    <?php
+                        }
+
+                        if (isset($stmt) && $stmt) {
+                            mysqli_stmt_close($stmt);
                         }
                         ?>
                 </div>
